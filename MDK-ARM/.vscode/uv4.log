@@ -1,0 +1,13 @@
+*** Using Compiler 'V6.22', folder: 'D:\keil\MDK\ARM\ARMCLANG\Bin'
+Build target '25_RC_JUMP_RM_C_BORAD'
+../mcu_bsp/Motor/c620.c(117): warning: non-void function does not return a value [-Wreturn-type]
+  117 | }
+      | ^
+../mcu_bsp/Motor/c620.c(139): error: incompatible function pointer types initializing 'void (*)(CANInstance *)' (aka 'void (*)(struct _ *)') with an expression of type 'CANInstance *(uint8_t, uint16_t *)' (aka 'struct _ *(unsigned char, unsigned short *)') [-Wincompatible-function-pointer-types]
+  139 |             .can_module_callback = C620_Group_Get_Info,
+      |                                    ^~~~~~~~~~~~~~~~~~~
+1 warning and 1 error generated.
+compiling c620.c...
+"25_RC_JUMP_RM_C_BORAD\25_RC_JUMP_RM_C_BORAD.axf" - 1 Error(s), 1 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:01

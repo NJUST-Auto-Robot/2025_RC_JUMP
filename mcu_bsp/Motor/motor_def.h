@@ -11,13 +11,9 @@
 
 #include "stdio.h"
 
-
 /* 反馈来源设定,若设为OTHER_FEED则需要指定数据来源指针,详见Motor_Controller_s*/
-typedef enum
-{
-    MOTOR_FEED = 0,
-    OTHER_FEED,
-} Feedback_Source_e;
+
+#define MOTOR_VAR_REVERSE(x) (x = -x)
 
 /* 电机正反转标志 */
 typedef enum
@@ -37,28 +33,16 @@ typedef struct
 {
     Motor_Working_Type_e motor_enable_flag;  // 使能标志
     Motor_Reverse_Flag_e motor_reverse_flag; // 是否反转
-    Feedback_Source_e angle_feedback_source; // 角度反馈类型
-    Feedback_Source_e speed_feedback_source; // 速度反馈类型
 
 } Motor_Control_Setting_s;
 
 typedef struct
 {
-    struct normal
-    {
-        float velocity_lim;
-        float iq_lim;
-    };
-    
-    struct reverse
-    {
-        float velocity_lim;
-        float iq_lim;
-    };
-    
+
+    float velocity_lim;
+    float iq_lim;
 
 } Motor_Limit_Setting_s;
-
 
 /* 电机类型枚举 */
 typedef enum
@@ -70,8 +54,8 @@ typedef enum
 
 typedef struct
 {
-    uint32_t id;                // 程序中的id,用于其它模块访问该电机模块
-    uint32_t motor_protocal_id; // 协议帧的id
+    uint32_t id; // 程序中的id,用于其它模块访问该电机模块
+    uint32_t id_protocol; // 电机的协议id,用于CAN通信
 
     Motor_Control_Setting_s motor_cofig;
     Motor_Limit_Setting_s motor_lim_cofig;
@@ -81,13 +65,13 @@ typedef struct
     {
         float velocity; // rad/s
         float deg_pos;  // (rad)
-        float iq;       // (A)
+        float current;  // (A)
     } get;
     struct out // 用作电机输出
     {
         float velocity;
         float deg_pos;
-        float iq;
+        float current;
     } set;
 
 } Motor_Controller_struct;

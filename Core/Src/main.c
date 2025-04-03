@@ -31,7 +31,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "c620.h"														
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -115,6 +115,17 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
+	//c620电机组
+//	C620_Group_Register(&hcan1,0,0x200);
+//	C620_Group_instnce[0]->motor_instnce_1.set.current =  1000;
+//  C620_Group_instnce[0]->motor_instnce_1.motor_cofig.motor_enable_flag = MOTOR_ENABLED;
+//	
+//		C620_Group_instnce[0]->motor_instnce_2.set.current =  1000;
+//  C620_Group_instnce[0]->motor_instnce_2.motor_cofig.motor_enable_flag = MOTOR_ENABLED;
+//				C620_Group_Set_Current(0);
+//		HAL_Delay(10);
+//dm_j4310电机组
+
 
   /* USER CODE END 2 */
 
@@ -122,6 +133,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -150,8 +162,8 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLM = 25;
-  RCC_OscInitStruct.PLL.PLLN = 336;
+  RCC_OscInitStruct.PLL.PLLM = 6;
+  RCC_OscInitStruct.PLL.PLLN = 168;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 7;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
