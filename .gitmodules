@@ -1,0 +1,3 @@
+[submodule "mcu_bsp"]
+	path = mcu_bsp
+	url = https://github.com/NJUST-Auto-Robot/mcu_bsp.git
