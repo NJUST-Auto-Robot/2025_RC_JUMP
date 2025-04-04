@@ -159,7 +159,7 @@ void C620_Group_Set_Current(uint8_t group_id)
     C620_Group_base_current(group_id);
     uint8_t motor_current_data[8] = {0};
 
-    motor_curren`t_data[0] = (int16_t)C620_Group_instnce[group_id]->motor_instnce_1.set.current >> 8;
+ motor_current_data[0] = (int16_t)C620_Group_instnce[group_id]->motor_instnce_1.set.current >> 8;
     motor_current_data[1] = (int16_t)C620_Group_instnce[group_id]->motor_instnce_1.set.current ;
     motor_current_data[2] = (int16_t)C620_Group_instnce[group_id]->motor_instnce_2.set.current >> 8;
     motor_current_data[3] = (int16_t)C620_Group_instnce[group_id]->motor_instnce_2.set.current ;
