@@ -115,14 +115,14 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
-	//c620电机组
+//	//c620电机组
 //	C620_Group_Register(&hcan1,0,0x200);
 //	C620_Group_instnce[0]->motor_instnce_1.set.current =  1000;
 //  C620_Group_instnce[0]->motor_instnce_1.motor_cofig.motor_enable_flag = MOTOR_ENABLED;
 //	
 //		C620_Group_instnce[0]->motor_instnce_2.set.current =  1000;
 //  C620_Group_instnce[0]->motor_instnce_2.motor_cofig.motor_enable_flag = MOTOR_ENABLED;
-//				C620_Group_Set_Current(0);
+//					C620_Group_Set_Current(0);
 //		HAL_Delay(10);
 //dm_j4310电机组
 
